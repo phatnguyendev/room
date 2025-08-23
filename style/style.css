@@ -1,0 +1,199 @@
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders:opsz,wght@10..72,100..900&family=Oswald:wght@200..700&family=Roboto+Flex:opsz,wght@8..144,100..1000&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders:opsz,wght@10..72,100..900&family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+body{
+  font-family: "Roboto Flex", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings:
+    "slnt" 0,
+    "wdth" 100,
+    "GRAD" 0,
+    "XOPQ" 96,
+    "XTRA" 468,
+    "YOPQ" 79,
+    "YTAS" 750,
+    "YTDE" -203,
+    "YTFI" 738,
+    "YTLC" 514,
+    "YTUC" 712;
+}
+.table-wrap {
+     max-height: 70vh;
+     overflow: auto;
+ }
+
+ thead th {
+     position: sticky;
+     top: 0;
+     background: var(--bs-body-bg);
+     z-index: 1;
+ }
+
+ .room {
+     font-weight: 700;
+ }
+
+ .alert.alert-danger.mb-0 {
+     text-align: justify;
+ }
+
+ .main {
+     max-width: 480px;
+     /* background: #b90e12; */
+     background: linear-gradient(180deg,  rgb(216, 0, 0) 0%, rgb(55, 0, 0) 100%);
+     min-height: 100vh;
+     position: relative;
+     margin-top: 0px !important;
+     margin-bottom: 0px !important;
+     overflow-x: hidden;
+ }
+
+ .main::before {
+         content: "";
+    position: absolute;
+    background-image: url(../images/trong.png);
+    left: 30%;
+    top: -10%;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+ }
+
+ .information {
+     position: relative;
+     text-align: center;
+ }
+
+ .information .content {
+     position: relative;
+     text-align: center;
+     display: inline-block;
+     border: 1px solid #ffbd59;
+     border-radius: 12px;
+     padding: 10px ;
+     background: #b90e12;
+     width: 100%;
+         -webkit-backdrop-filter: blur(35px);
+    backdrop-filter: blur(35px);
+    background: #ffffff0f;
+    border: .5px solid #ffbd59;
+    box-shadow: 4px 4px 5px #00000026;
+ }
+
+ .information .content span {
+     font-size: 16px;
+     color: #fff560;
+ }
+
+ .information .content p {
+    margin: 0px;
+    color: #fff560;
+    font-weight: 600;
+    margin-bottom: 10px;
+    font-size: 16px;
+    line-height: 20px;
+ }
+
+ .information .img-bottom img {
+     position: absolute;
+    max-width: 250px;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -18px;
+ }
+
+ .welcome {
+     margin-top: 15px;
+     margin-bottom: 15px;
+ }
+
+.title h1{
+        font-family: "Big Shoulders", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: bold;
+    font-style: normal;
+    position: relative;
+    text-align: center;
+    padding-top: 30px;
+    margin-bottom: 30px;
+    color: #fffeda;
+    font-size: 36px;
+    letter-spacing: -1px;
+    text-transform: uppercase;
+    color: #0000;
+    background: linear-gradient(90deg, #ffe8af, #ffc533, #ffe8af);
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+ .card.shadow-sm.mb-3 {
+    -webkit-backdrop-filter: blur(35px);
+    backdrop-filter: blur(35px);
+    background: #ffffff0f;
+    border: .5px solid #ffbd59;
+    box-shadow: 4px 4px 5px #00000026;
+    border-radius: 12px;
+ }
+
+ button#btn {
+     position: relative;
+    display: inline-block;
+    border-radius: 40px;
+    padding: 12px 14px;
+    background: linear-gradient(90deg, rgb(255, 232, 175) 0%, rgb(255, 197, 51) 50%, rgb(255, 232, 175) 100%);
+    border: 0;
+    outline: none;
+    box-shadow: none;
+    cursor: pointer;
+    transition: all 0.3s;
+    color: #000;
+    font-weight: 700;
+ }
+@keyframes glowing{
+    0% {
+    background-position: 0 0;
+}
+50% {
+    background-position: 400% 0;
+}
+100% {
+    background-position: 0 0;
+}
+}
+button#btn:hover{
+        animation: glowing 8s linear infinite;
+    background-size: 400%;
+}
+ div#result {
+     border: 2px solid #ffbd59;
+     border-radius: 12px;
+ }
+ form .fw-semibold{
+font-size: 16px;
+    color: #fff;
+    font-weight: 400 !important;
+ }
+ form input#hoten{
+    height: 45px;
+    background: #950400;
+    border-color: transparent;
+    font-size: 16px;
+    color: #fff;
+ }
+ form input#hoten::placeholder{
+    color: #fff;
+    font-size: 12px;
+    color: #fff;
+    opacity: 0.8;
+ }
+
+form input#hoten:focus {
+    border: .5px solid transparent;
+    box-shadow: none;
+ }
+form  .form-text{
+font-size: 12px;
+    color: #fff;
+    opacity: 0.8;
+ }

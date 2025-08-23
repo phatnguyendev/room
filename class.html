@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Điểm danh & Nhận tài liệu</title>
+<style>
+  body{font-family:system-ui,Arial;max-width:720px;margin:24px auto;padding:0 12px}
+  .card{border:1px solid #eee;border-radius:12px;padding:16px;margin:12px 0;box-shadow:0 4px 10px rgba(0,0,0,.05)}
+  label{display:block;font-weight:600;margin-top:8px}
+  input,button{padding:10px;border-radius:8px;border:1px solid #ddd;width:100%;box-sizing:border-box}
+  button{cursor:pointer;font-weight:600}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .ok{color:#0a7f28;font-weight:700}.err{color:#b00020;font-weight:700}
+  ul{padding-left:18px}
+</style>
+</head>
+<body>
+<h2>Điểm danh & Nhận tài liệu</h2>
+
+<div class="card">
+  <div class="grid">
+    <div>
+      <label for="eventId">Mã sự kiện (EventID)</label>
+      <input id="eventId" placeholder="VD: UI7-2025-08-25-CLASS">
+    </div>
+    <div>
+      <label for="sbd">SBD (tuỳ chọn)</label>
+      <input id="sbd" placeholder="Có thể bỏ trống">
+    </div>
+  </div>
+  <label for="hoten">Họ tên (tuỳ chọn)</label>
+  <input id="hoten" placeholder="Có thể bỏ trống nếu đã có SBD">
+  <div class="grid" style="margin-top:12px">
+    <button id="btnCheckin">Điểm danh</button>
+    <button id="btnMaterials">Nhận tài liệu</button>
+  </div>
+  <p id="msg"></p>
+</div>
+
+<div class="card" id="materialsBox"></div>
+
+<script>
+const GAS_URL = "https://script.google.com/macros/s/AKfycbz73s4rh8cUawjMiZ2rg2Kma1zCG1vvblonQMFjY-J-crtBMy0uAf7qaMfQUbk-JBjn/exec";
+const $ = id => document.getElementById(id);
+
+$("btnCheckin").onclick = async () => {
+  $("msg").textContent = "Đang điểm danh...";
+  const eventId = $("eventId").value.trim();
+  const sbd = $("sbd").value.trim();
+  const hoten = $("hoten").value.trim();
+  if(!eventId){ $("msg").innerHTML = '<span class="err">Nhập EventID.</span>'; return; }
+  if(!sbd && !hoten){ $("msg").innerHTML = '<span class="err">Nhập SBD hoặc Họ tên.</span>'; return; }
+
+  const res = await fetch(GAS_URL, { method:"POST", headers:{ "Content-Type":"application/json" },
+    body: JSON.stringify({ action:"checkin", eventId, sbd, hoten })});
+  const r = await res.json();
+  $("msg").innerHTML = r.ok ? '<span class="ok">Đã điểm danh.</span>' : '<span class="err">'+(r.error||'Lỗi')+'</span>';
+};
+
+$("btnMaterials").onclick = async () => {
+  $("materialsBox").textContent = "Đang lấy tài liệu...";
+  const eventId = $("eventId").value.trim();
+  if(!eventId){ $("materialsBox").innerHTML = '<span class="err">Nhập EventID.</span>'; return; }
+  const res = await fetch(GAS_URL, { method:"POST", headers:{ "Content-Type":"application/json" },
+    body: JSON.stringify({ action:"materials", eventId })});
+  const r = await res.json();
+  if(!r.ok){ $("materialsBox").innerHTML = '<span class="err">'+(r.error||'Lỗi')+'</span>'; return; }
+  if(!r.materials || r.materials.length===0){ $("materialsBox").textContent = "Chưa có tài liệu."; return; }
+  $("materialsBox").innerHTML = "<ul>" + r.materials.map(m => `<li><a href="${m.url}" target="_blank" rel="noopener">${m.name}</a></li>`).join("") + "</ul>";
+};
+</script>
+</body>
+</html>
