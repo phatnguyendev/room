@@ -14,7 +14,10 @@
   
 </head>
 <body>
-  <main class="container my-4 main">
+  <main class="">
+    
+    <section class="main">
+      <div class="container my-4 ">
     <div class="welcome">
         <!-- <h2>NHIỆT LIỆT CHÀO MỪNG CÁC ĐỒNG CHÍ<br>VỀ DỰ LỚP TẬP HUẤN XÂY DỰNG HỌC LIỆU SỐ<br>CHO GIẢNG VIÊN, GIÁO VIÊN CÁC HỌC VIỆN,<br>TRƯỜNG TRONG QUÂN ĐỘI</h2> -->
         <img src="./images/chao.gif" alt="welcome image" class="w-100" style="position: relative;">
@@ -65,6 +68,21 @@
     <div id="result" class="card shadow-sm d-none">
       <div class="card-body" id="resultBody"></div>
     </div>
+    </div>
+    </section>
+    <section class="faq">
+      <div class="container py-4">
+        <h3>VỊ TRÍ TÒA NHÀ</h3>
+        <div class="location">
+          <img src="./images/location.png" alt="location" class="w-100">
+        </div>
+      </div>
+    </section>
+    <footer>
+      <div class="container">
+        <div class="copyright"><span>© 2025 - Developed by MitechCenter</span></div>
+      </div>
+    </footer>
   </main>
 
   <!-- Bootstrap JS (for dropdowns, etc.) -->
@@ -171,7 +189,7 @@
             <label for="unitFilter" class="col-form-label">Đơn vị:</label>
           </div>
           <div class="col-12 col-md-4">
-            <select id="unitFilter" class="form-select">
+            <select id="unitFilter" class="form-select select-arrow-white">
               <option value="">Tất cả đơn vị</option>
               ${units.map(u => `<option value="${escapeHTML(u)}">${escapeHTML(u)}</option>`).join("")}
             </select>
