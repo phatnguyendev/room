@@ -231,6 +231,7 @@ font-size: 12px;
 #result label.col-form-label{
         margin: 0px !important;
     color: #fff;
+        float: left;
  }
 #result  select#unitFilter{
     height: 45px;
@@ -238,6 +239,7 @@ font-size: 12px;
     border-color: transparent;
     font-size: 16px;
     color: #fff;
+    width: 100%;
  }
 #result  select#unitFilter:focus {
     border: .5px solid transparent;
