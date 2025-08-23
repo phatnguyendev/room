@@ -64,6 +64,7 @@ body{
     font-weight: 700;
     text-decoration: none;
 }
+form.row.gy-3.gx-2.align-items-end{ align-items: center !important;}
  .main::before {
          content: "";
     position: absolute;
