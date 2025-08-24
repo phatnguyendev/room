@@ -340,6 +340,33 @@ footer .copyright{
 .main.class{
     min-height: auto;
 }
+#agenda {
+    padding-bottom: 15px;
+    padding-top: 15px;
+}
+button.accordion-button{
+        font-family: 'Roboto Flex';
+}
+.fw-semibold{
+    color: #fff;
+}
+.text-secondary.small.mt-2{
+    display: none !important;
+}
+#agenda h2{
+        background: linear-gradient(90deg, rgb(247, 0, 0) 0%, rgb(255, 119, 119) 50%, rgb(247, 0, 0) 100%);
+    background-clip: text;
+    color: transparent;
+    font-family: "Big Shoulders", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: bold;
+    font-style: normal;
+    position: relative;
+    text-align: center;
+    font-size: 36px;
+    letter-spacing: -1px;
+    line-height: 50px;
+}
  .select-arrow-white.form-select{
   --bs-form-select-bg-img: url("data:image/svg+xml,\
 %3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none'%3e\
