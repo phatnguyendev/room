@@ -64,6 +64,17 @@ body{
     font-weight: 700;
     text-decoration: none;
 }
+button.accordion-button:focus{
+   box-shadow: none;
+}
+.table>thead {
+    vertical-align: middle;
+}
+button.accordion-button{
+        background: linear-gradient(90deg, rgb(247, 0, 0) 0%, rgb(255, 119, 119) 50%, rgb(247, 0, 0) 100%);
+    background-clip: text;
+    color: transparent;
+}
 form.row.gy-3.gx-2.align-items-end{ align-items: center !important;}
  .main::before {
          content: "";
