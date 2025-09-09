@@ -43,7 +43,7 @@ body{
      margin: auto;
      /* background: #b90e12; */
      background: linear-gradient(180deg,  rgb(216, 0, 0) 0%, rgb(55, 0, 0) 100%);
-     min-height: 100vh;
+     min-height: auto;
      position: relative;
      margin-top: 0px !important;
      margin-bottom: 0px !important;
@@ -69,7 +69,7 @@ form.row.gy-3.gx-2.align-items-end{ align-items: center !important;}
          content: "";
     position: absolute;
     background-image: url(../images/trong.png);
-    left: 30%;
+    left: 40%;
     top: -10%;
     width: 100%;
     height: 100%;
